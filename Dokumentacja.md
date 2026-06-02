@@ -1,6 +1,4 @@
-# System rezerwacji sal na uczelni
-
-## Temat projektu
+# Temat projektu
 
 System rezerwacji sal na uczelni jest aplikacją webową przeznaczoną do zarządzania salami dydaktycznymi oraz procesem ich rezerwacji przez nauczycieli akademickich. Głównym celem systemu jest usprawnienie organizacji zajęć oraz eliminacja konfliktów związanych z równoczesnym wykorzystaniem tych samych pomieszczeń.
 
@@ -33,9 +31,9 @@ Najważniejsze cechy systemu:
 
 ---
 
-# Uruchomienie projektu (developer)
+## Uruchomienie projektu (developer)
 
-## Wykorzystane technologie
+### Wykorzystane technologie
 
 | Technologia  | Wersja  | Strona                  |
 | ------------ | ------- | ----------------------- |
@@ -50,29 +48,29 @@ Najważniejsze cechy systemu:
 
 ---
 
-## Wymagania programowe
+### Wymagania programowe
 
 Do uruchomienia projektu wymagane są:
 
-### System operacyjny
+#### System operacyjny
 
 * Windows 11
 * Windows 10
 * Linux
 * macOS
 
-### Środowisko uruchomieniowe
+#### Środowisko uruchomieniowe
 
 * PHP 8.5.6
 * Composer 2.9.7
 * Node.js 24.15.0
 * npm 11.12.1
 
-### Baza danych
+#### Baza danych
 
 * MySQL 8.x
 
-### Dodatkowe narzędzia
+#### Dodatkowe narzędzia
 
 * Git
 * Terminal systemowy
@@ -80,22 +78,22 @@ Do uruchomienia projektu wymagane są:
 
 ---
 
-## Proces instalacji
+### Proces instalacji
 
-### 1. Pobranie projektu
+#### 1. Pobranie projektu
 
 ```bash
 git clone https://github.com/YevhenMarchak/Room-flow.git
 cd room-flow
-```
+````
 
-### 2. Instalacja zależności PHP
+#### 2. Instalacja zależności PHP
 
 ```bash
 composer install
 ```
 
-### 3. Instalacja zależności JavaScript
+#### 3. Instalacja zależności JavaScript
 
 ```bash
 npm install
@@ -103,9 +101,9 @@ npm install
 
 ---
 
-## Proces konfiguracji
+### Proces konfiguracji
 
-### 1. Utworzenie pliku środowiskowego
+#### 1. Utworzenie pliku środowiskowego
 
 Skopiuj plik:
 
@@ -119,7 +117,7 @@ lub
 cp .env.example .env
 ```
 
-### 2. Konfiguracja bazy danych
+#### 2. Konfiguracja bazy danych
 
 W pliku `.env` należy ustawić:
 
@@ -132,19 +130,19 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 3. Wygenerowanie klucza aplikacji
+#### 3. Wygenerowanie klucza aplikacji
 
 ```bash
 php artisan key:generate
 ```
 
-### 4. Utworzenie struktury bazy danych
+#### 4. Utworzenie struktury bazy danych
 
 ```bash
 php artisan migrate:fresh
 ```
 
-### 5. Wygenerowanie danych demonstracyjnych
+#### 5. Wygenerowanie danych demonstracyjnych
 
 ```bash
 php artisan db:seed --class=DemoDataSeeder
@@ -160,9 +158,9 @@ Seeder tworzy:
 
 ---
 
-## Dane logowania
+#### Dane logowania
 
-### Administrator
+##### Administrator
 
 Login:
 
@@ -176,7 +174,7 @@ Hasło:
 password
 ```
 
-### Nauczyciele
+##### Nauczyciele
 
 Przykładowe konto:
 
@@ -194,11 +192,11 @@ Pozostałe konta nauczycieli są generowane automatycznie przez seeder.
 
 ---
 
-## Uruchomienie projektu
+#### Uruchomienie projektu
 
 Do poprawnego działania aplikacji należy uruchomić trzy osobne terminale.
 
-### Terminal 1
+##### Terminal 1
 
 Uruchomienie serwera Laravel:
 
@@ -206,7 +204,7 @@ Uruchomienie serwera Laravel:
 php artisan serve
 ```
 
-### Terminal 2
+##### Terminal 2
 
 Uruchomienie kompilatora zasobów frontendowych:
 
@@ -214,7 +212,7 @@ Uruchomienie kompilatora zasobów frontendowych:
 npm run dev
 ```
 
-### Terminal 3
+##### Terminal 3
 
 Uruchomienie harmonogramu zadań Laravel:
 
@@ -232,7 +230,7 @@ http://127.0.0.1:8000
 
 ---
 
-# Uruchomienie projektu (user)
+## Uruchomienie projektu (user)
 
 Po uruchomieniu aplikacji przez administratora systemu użytkownik może korzystać z aplikacji za pomocą dowolnej nowoczesnej przeglądarki internetowej.
 
