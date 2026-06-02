@@ -246,6 +246,49 @@ http://127.0.0.1:8000/login
 
 Minimalne wymagania sprzętowe:
 
+## Plany rozbudowy
+
+Pierwsza wersja systemu skupia się na podstawowych funkcjonalnościach związanych z zarządzaniem salami, harmonogramami zajęć oraz procesem rezerwacji. Podczas realizacji projektu udało się zaimplementować wszystkie kluczowe funkcje wymagane do prawidłowego działania systemu, jednak istnieje wiele możliwości dalszego rozwoju aplikacji.
+
+### Funkcjonalności, których zabrakło w pierwszej wersji
+
+Ze względu na ograniczony czas realizacji projektu nie zostały zaimplementowane następujące funkcjonalności:
+
+- Powiadomienia e-mail informujące o zaakceptowaniu lub odrzuceniu rezerwacji.
+- System odzyskiwania hasła za pomocą wiadomości e-mail.
+- Zaawansowane filtrowanie i wyszukiwanie rezerwacji.
+- Eksport harmonogramów oraz rezerwacji do plików PDF lub Excel.
+- Historia zmian wykonywanych przez administratora.
+- Kalendarz prezentujący rezerwacje w widoku miesięcznym.
+
+### Możliwe rozszerzenia w wersji 2.0
+
+W kolejnych wersjach systemu planowane jest rozszerzenie funkcjonalności o:
+
+- Integrację z uczelnianym systemem kont użytkowników.
+- Automatyczne powiadomienia e-mail dla nauczycieli i administratorów.
+- Powiadomienia w czasie rzeczywistym o zmianach w harmonogramie.
+- Integrację z kalendarzami Google Calendar oraz Microsoft Outlook.
+- Możliwość cyklicznego tworzenia rezerwacji.
+- Generowanie raportów dotyczących wykorzystania sal.
+- Statystyki obciążenia sal i harmonogramów.
+- Aplikację mobilną dla systemów Android i iOS.
+- Możliwość dodawania załączników do rezerwacji (np. plan zajęć lub dokumentacja wydarzenia).
+
+### Potencjalne optymalizacje
+
+W przyszłości możliwe jest również zwiększenie wydajności i skalowalności systemu poprzez:
+
+- Wprowadzenie mechanizmu cache'owania najczęściej pobieranych danych.
+- Optymalizację zapytań do bazy danych oraz wykorzystanie eager loading.
+- Dodanie kolejek zadań (Laravel Queues) do obsługi powiadomień.
+- Wdrożenie testów automatycznych obejmujących najważniejsze procesy biznesowe.
+- Zastosowanie środowiska produkcyjnego opartego na Dockerze.
+- Rozbudowę systemu uprawnień o dodatkowe role użytkowników.
+- Zwiększenie poziomu bezpieczeństwa poprzez uwierzytelnianie dwuskładnikowe (2FA).
+
+Rozwój wymienionych funkcjonalności pozwoliłby na wykorzystanie systemu nie tylko w małych jednostkach organizacyjnych, ale również w większych instytucjach edukacyjnych posiadających rozbudowaną infrastrukturę dydaktyczną.
+
 * Procesor dwurdzeniowy,
 * 4 GB pamięci RAM,
 * 500 MB wolnego miejsca na dysku,
