@@ -1,4 +1,4 @@
-# Temat projektu
+# System rezerwacji sal na uczelni
 
 System rezerwacji sal na uczelni jest aplikacją webową przeznaczoną do zarządzania salami dydaktycznymi oraz procesem ich rezerwacji przez nauczycieli akademickich. Głównym celem systemu jest usprawnienie organizacji zajęć oraz eliminacja konfliktów związanych z równoczesnym wykorzystaniem tych samych pomieszczeń.
 
