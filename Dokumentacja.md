@@ -85,7 +85,7 @@ Do uruchomienia projektu wymagane są:
 ### 1. Pobranie projektu
 
 ```bash
-git clone <adres_repozytorium>
+git clone https://github.com/YevhenMarchak/Room-flow.git
 cd room-flow
 ```
 
