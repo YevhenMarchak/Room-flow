@@ -246,6 +246,11 @@ http://127.0.0.1:8000/login
 
 Minimalne wymagania sprzętowe:
 
+* Procesor dwurdzeniowy,
+* 4 GB pamięci RAM,
+* 500 MB wolnego miejsca na dysku,
+* Aktualna przeglądarka internetowa (Chrome, Edge, Firefox).
+
 ## Plany rozbudowy
 
 Pierwsza wersja systemu skupia się na podstawowych funkcjonalnościach związanych z zarządzaniem salami, harmonogramami zajęć oraz procesem rezerwacji. Podczas realizacji projektu udało się zaimplementować wszystkie kluczowe funkcje wymagane do prawidłowego działania systemu, jednak istnieje wiele możliwości dalszego rozwoju aplikacji.
@@ -288,9 +293,3 @@ W przyszłości możliwe jest również zwiększenie wydajności i skalowalnośc
 - Zwiększenie poziomu bezpieczeństwa poprzez uwierzytelnianie dwuskładnikowe (2FA).
 
 Rozwój wymienionych funkcjonalności pozwoliłby na wykorzystanie systemu nie tylko w małych jednostkach organizacyjnych, ale również w większych instytucjach edukacyjnych posiadających rozbudowaną infrastrukturę dydaktyczną.
-
-* Procesor dwurdzeniowy,
-* 4 GB pamięci RAM,
-* 500 MB wolnego miejsca na dysku,
-* Aktualna przeglądarka internetowa (Chrome, Edge, Firefox).
-
