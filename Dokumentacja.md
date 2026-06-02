@@ -234,9 +234,15 @@ http://127.0.0.1:8000
 
 # Uruchomienie projektu (user)
 
-Projekt nie został wdrożony na publiczny serwer produkcyjny.
+Po uruchomieniu aplikacji przez administratora systemu użytkownik może korzystać z aplikacji za pomocą dowolnej nowoczesnej przeglądarki internetowej.
 
-Aplikacja jest dostępna wyłącznie w środowisku deweloperskim i wymaga lokalnego uruchomienia zgodnie z instrukcją zawartą w sekcji „Uruchomienie projektu (developer)”.
+Adres aplikacji:
+
+http://127.0.0.1:8000
+
+Ekran logowania:
+
+http://127.0.0.1:8000/login
 
 Minimalne wymagania sprzętowe:
 
