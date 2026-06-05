@@ -9,22 +9,48 @@ use App\Models\Room;
 
 class UserController extends Controller
 {
-    public function index()
-        {
-            $users = User::with([
-        'reservations',
-        'schedules.room'
+    public function index(Request $request)
+    {
+        $query = User::with([
+            'reservations',
+            'schedules.room'
         ])
-        ->where('role', 'teacher')
-        ->get();
+        ->where('role', 'teacher');
+
+        if ($request->filled('search')) {
+
+            $search = $request->search;
+
+            $query->where(function ($q) use ($search) {
+
+                $q->where(
+                    'name',
+                    'like',
+                    "%{$search}%"
+                )
+                ->orWhere(
+                    'email',
+                    'like',
+                    "%{$search}%"
+                );
+
+            });
+
+        }
+
+        $users = $query
+            ->latest()
+            ->get();
 
         $rooms = Room::all();
 
-        return view('admin.users', compact(
-            'users',
-            'rooms'
-        ));
-
+        return view(
+            'admin.users',
+            compact(
+                'users',
+                'rooms'
+            )
+        );
     }
 
     public function store(Request $request)

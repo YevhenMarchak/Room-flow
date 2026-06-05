@@ -12,6 +12,68 @@
         Rooms Management
     </x-slot>
 
+    <div class="mb-6">
+
+        <form method="GET" class="flex gap-4 items-center">
+
+            <input
+                type="text"
+                name="search"
+                value="{{ request('search') }}"
+                placeholder="Search room number..."
+                class="border rounded-xl px-4 py-2 w-72"
+            >
+
+            <select
+                name="type"
+                class="border rounded-xl px-4 py-2 min-w-[180px]"
+            >
+
+                <option value="">
+                    All types
+                </option>
+
+                <option
+                    value="Lecture"
+                    @selected(request('type') == 'Lecture')
+                >
+                    Lecture
+                </option>
+
+                <option
+                    value="Exercise"
+                    @selected(request('type') == 'Exercise')
+                >
+                    Exercise
+                </option>
+
+                <option
+                    value="Laboratory"
+                    @selected(request('type') == 'Laboratory')
+                >
+                    Laboratory
+                </option>
+
+            </select>
+
+            <input
+                type="number"
+                name="capacity"
+                value="{{ request('capacity') }}"
+                placeholder="Min capacity"
+                class="border rounded-xl px-4 py-2 w-40"
+            >
+
+            <button
+                class="bg-blue-600 text-white px-5 py-2 rounded-xl"
+            >
+                Search
+            </button>
+
+        </form>
+
+    </div>
+
     <div class="flex justify-between items-center mb-6">
 
         <h2 class="text-2xl font-bold">

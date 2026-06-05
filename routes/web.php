@@ -23,13 +23,10 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth', 'role:teacher'])->group(function () {
 
-    Route::get('/teacher/reservations', function () {
-
-        $reservations = auth()->user()->reservations()->with('room')->latest()->get();
-
-        return view('teacher.reservations', compact('reservations'));
-
-    });
+    Route::get(
+        '/teacher/reservations',
+        [ReservationController::class, 'teacherIndex']
+    );
 
     Route::get(
         '/teacher/reserve-room',

@@ -4,6 +4,74 @@
         Reservations Management
     </x-slot>
 
+    <div class="mb-6">
+
+        <form method="GET" class="flex gap-4 items-center">
+
+            <input
+                type="text"
+                name="search"
+                value="{{ request('search') }}"
+                placeholder="Search teacher or room..."
+                class="border rounded-xl px-4 py-2 w-80"
+            >
+
+            <select
+                name="status"
+                class="border rounded-xl px-4 py-2 w-48"
+            >
+
+                <option value="">
+                    All statuses
+                </option>
+
+                <option
+                    value="active"
+                    @selected(request('status') == 'active')
+                >
+                    Active
+                </option>
+
+                <option
+                    value="finished"
+                    @selected(request('status') == 'finished')
+                >
+                    Finished
+                </option>
+
+                <option
+                    value="rejected"
+                    @selected(request('status') == 'rejected')
+                >
+                    Rejected
+                </option>
+
+            </select>
+
+            <input
+                type="date"
+                name="from_date"
+                value="{{ request('from_date') }}"
+                class="border rounded-xl px-4 py-2"
+            >
+
+            <input
+                type="date"
+                name="to_date"
+                value="{{ request('to_date') }}"
+                class="border rounded-xl px-4 py-2"
+            >
+
+            <button
+                class="bg-blue-600 text-white px-5 py-2 rounded-xl"
+            >
+                Search
+            </button>
+
+        </form>
+
+    </div>
+
     <div class="bg-white rounded-2xl shadow overflow-hidden">
 
         <table class="w-full">
@@ -172,5 +240,9 @@
     </div>
 
     @endforeach
+
+    <div class="mt-6">
+        {{ $reservations->links() }}
+    </div>
 
 </x-app-layout>

@@ -200,6 +200,8 @@ class DemoDataSeeder extends Seeder
                 'day_of_week' => $days[$index % 5],
                 'start_time' => $timeSlots[0][0],
                 'end_time' => $timeSlots[0][1],
+                'start_date' => '2025-10-01',
+                'end_date' => '2026-06-15',
             ]);
 
             Schedule::create([
@@ -209,6 +211,9 @@ class DemoDataSeeder extends Seeder
                 'day_of_week' => $days[($index + 2) % 5],
                 'start_time' => $timeSlots[2][0],
                 'end_time' => $timeSlots[2][1],
+
+                'start_date' => '2025-10-01',
+                'end_date' => '2026-06-15',
             ]);
 
             Schedule::create([
@@ -218,6 +223,9 @@ class DemoDataSeeder extends Seeder
                 'day_of_week' => $days[($index + 4) % 5],
                 'start_time' => $timeSlots[4][0],
                 'end_time' => $timeSlots[4][1],
+                
+                'start_date' => '2025-10-01',
+                'end_date' => '2026-06-15',
             ]);
         }
 

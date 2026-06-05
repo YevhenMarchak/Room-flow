@@ -7,11 +7,48 @@ use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
-    public function index()
-{
-    $rooms = Room::all();
-    return view('admin.rooms', ['rooms' => $rooms]);
-}
+    public function index(Request $request)
+    {
+        $query = Room::query();
+
+        if ($request->filled('search')) {
+
+            $query->where(
+                'number',
+                'like',
+                '%' . $request->search . '%'
+            );
+
+        }
+
+        if ($request->filled('type')) {
+
+            $query->where(
+                'type',
+                $request->type
+            );
+
+        }
+
+        if ($request->filled('capacity')) {
+
+            $query->where(
+                'capacity',
+                '>=',
+                $request->capacity
+            );
+
+        }
+
+        $rooms = $query
+            ->orderBy('number')
+            ->get();
+
+        return view(
+            'admin.rooms',
+            compact('rooms')
+        );
+    }
 
     public function create()
 {

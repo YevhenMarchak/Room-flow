@@ -3,6 +3,60 @@
         Reservations
     </x-slot>
 
+    <div class="mb-6">
+
+        <form method="GET" class="flex gap-4 items-center">
+
+            <input
+                type="text"
+                name="search"
+                value="{{ request('search') }}"
+                placeholder="Search room..."
+                class="border rounded-xl px-4 py-2 w-72"
+            >
+
+            <select
+                name="status"
+                class="border rounded-xl px-4 py-2 min-w-[180px]"
+            >
+
+                <option value="">
+                    All statuses
+                </option>
+
+                <option
+                    value="active"
+                    @selected(request('status') == 'active')
+                >
+                    Active
+                </option>
+
+                <option
+                    value="finished"
+                    @selected(request('status') == 'finished')
+                >
+                    Finished
+                </option>
+
+                <option
+                    value="rejected"
+                    @selected(request('status') == 'rejected')
+                >
+                    Rejected
+                </option>
+
+            </select>
+
+            <button
+                class="bg-blue-600 text-white px-5 py-2 rounded-xl"
+            >
+                Search
+            </button>
+
+        </form>
+
+    </div>
+
     <div class="space-y-6">
 
         @foreach($reservations as $reservation)

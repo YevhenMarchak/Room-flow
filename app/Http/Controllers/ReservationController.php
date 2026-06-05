@@ -191,15 +191,119 @@ class ReservationController extends Controller
         return redirect('/admin/reservations');
     }
 
-    public function adminIndex()
+    public function adminIndex(Request $request)
     {
-        $reservations = Reservation::with([
+        $query = Reservation::with([
             'room',
             'user'
-        ])->latest()->get();
+        ]);
+
+        if ($request->filled('search')) {
+
+            $search = $request->search;
+
+            $query->where(function ($q) use ($search) {
+
+                $q->whereHas('user', function ($userQuery) use ($search) {
+
+                    $userQuery->where(
+                        'name',
+                        'like',
+                        "%{$search}%"
+                    );
+
+                })
+
+                ->orWhereHas('room', function ($roomQuery) use ($search) {
+
+                    $roomQuery->where(
+                        'number',
+                        'like',
+                        "%{$search}%"
+                    );
+
+                });
+
+            });
+
+        }
+
+        if ($request->filled('status')) {
+
+            $query->where(
+                'status',
+                $request->status
+            );
+
+        }
+
+        if ($request->filled('from_date')) {
+
+            $query->whereDate(
+                'date',
+                '>=',
+                $request->from_date
+            );
+
+        }
+
+        if ($request->filled('to_date')) {
+
+            $query->whereDate(
+                'date',
+                '<=',
+                $request->to_date
+            );
+
+        }
+
+        $reservations = $query
+            ->latest()
+            ->paginate(20)
+            ->withQueryString();
 
         return view(
             'admin.reservations',
+            compact('reservations')
+        );
+    }
+
+    public function teacherIndex(Request $request)
+    {
+        $query = auth()
+            ->user()
+            ->reservations()
+            ->with('room');
+
+        if ($request->filled('search')) {
+
+            $query->whereHas('room', function ($q) use ($request) {
+
+                $q->where(
+                    'number',
+                    'like',
+                    '%' . $request->search . '%'
+                );
+
+            });
+
+        }
+
+        if ($request->filled('status')) {
+
+            $query->where(
+                'status',
+                $request->status
+            );
+
+        }
+
+        $reservations = $query
+            ->latest()
+            ->paginate(20)
+            ->withQueryString();
+        return view(
+            'teacher.reservations',
             compact('reservations')
         );
     }
@@ -290,6 +394,16 @@ class ReservationController extends Controller
                     ->where(
                         'day_of_week',
                         $dayOfWeek
+                    )
+                    ->whereDate(
+                        'start_date',
+                        '<=',
+                        $request->date
+                    )
+                    ->whereDate(
+                        'end_date',
+                        '>=',
+                        $request->date
                     )
                     ->get()
                     ->contains(function ($schedule) use ($request) {

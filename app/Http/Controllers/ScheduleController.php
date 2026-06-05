@@ -25,6 +25,9 @@ class ScheduleController extends Controller
             'day_of_week' => $request->day_of_week,
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
+
+            'start_date' => '2025-10-01',
+            'end_date' => '2026-06-15',
         ]);
 
         return back()->with('success', 'Class added.');
