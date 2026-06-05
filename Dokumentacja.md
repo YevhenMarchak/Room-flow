@@ -265,10 +265,8 @@ Administrator posiada dostęp do panelu administracyjnego umożliwiającego:
 - przeglądanie wszystkich rezerwacji oraz możliwość ich odrzucania,
 - filtrowanie i wyszukiwanie danych.
 
-![Panel administratora](![Uploading image.png…]()
-)
-
-Opis zdjęcia: Panel administratora zawierający dostępne moduły systemu.
+![Panel administratora](images/Admin_dashboard.png)
+*Rysunek 1. Panel administratora zawierający dostępne moduły systemu.*
 
 #### Nauczyciel
 
