@@ -249,6 +249,189 @@ Minimalne wymagania sprzętowe:
 * 500 MB wolnego miejsca na dysku,
 * Aktualna przeglądarka internetowa (Chrome, Edge, Firefox).
 
+## Podręcznik użytkownika
+
+### Role w systemie
+
+System RoomFlow posiada dwa poziomy uprawnień:
+
+#### Administrator
+
+Administrator posiada dostęp do panelu administracyjnego umożliwiającego:
+
+- zarządzanie użytkownikami,
+- zarządzanie salami,
+- tworzenie harmonogramów zajęć,
+- przeglądanie wszystkich rezerwacji oraz możliwość ich odrzucania,
+- filtrowanie i wyszukiwanie danych.
+
+![Panel administratora](![Uploading image.png…]()
+)
+
+Opis zdjęcia: Panel administratora zawierający dostępne moduły systemu.
+
+#### Nauczyciel
+
+Nauczyciel posiada dostęp do funkcji związanych z rezerwacją sal i przeglądaniem własnego harmonogramu.
+
+Użytkownik może:
+
+- przeglądać własne rezerwacje,
+- wyszukiwać dostępne sale,
+- tworzyć nowe rezerwacje,
+- przeglądać harmonogram zajęć,
+- zarządzać własnym profilem.
+
+![Panel nauczyciela](tutaj_zrzut_ekranu)
+
+Opis zdjęcia: Panel użytkownika z dostępnymi funkcjami dla prowadzącego.
+
+### Zarządzanie użytkownikami
+
+Zakładka **Users** umożliwia administratorowi:
+
+- dodawanie nowych użytkowników,
+- edycję danych użytkowników,
+- usuwanie kont użytkowników,
+- wyszukiwanie użytkowników po imieniu lub adresie e-mail.
+
+![Users](tutaj_zrzut_ekranu)
+
+Opis zdjęcia: Lista użytkowników wraz z możliwością wyszukiwania.
+
+### Zarządzanie salami
+
+Zakładka **Rooms** umożliwia:
+
+- dodawanie nowych sal,
+- edycję istniejących sal,
+- usuwanie sal,
+- wyszukiwanie po numerze sali,
+- filtrowanie według typu sali,
+- filtrowanie według minimalnej pojemności.
+
+![Rooms](tutaj_zrzut_ekranu)
+
+Opis zdjęcia: Lista sal wraz z mechanizmami wyszukiwania i filtrowania.
+
+### Zarządzanie harmonogramami
+
+Administrator może przypisywać prowadzącym zajęcia cykliczne.
+
+Dla każdego wpisu określane są:
+
+- nazwa przedmiotu,
+- sala,
+- dzień tygodnia,
+- godzina rozpoczęcia,
+- godzina zakończenia.
+
+![Schedule](tutaj_zrzut_ekranu)
+
+Opis zdjęcia: Okno dodawania oraz edycji zajęć w harmonogramie.
+
+### Zarządzanie rezerwacjami
+
+Administrator posiada dostęp do wszystkich rezerwacji utworzonych przez użytkowników.
+
+Dostępne funkcje:
+
+- wyszukiwanie po nazwisku prowadzącego lub numerze sali,
+- filtrowanie po statusie rezerwacji,
+- filtrowanie po zakresie dat,
+- akceptowanie i odrzucanie rezerwacji.
+
+System wykorzystuje stronicowanie danych, dzięki czemu możliwe jest wydajne wyświetlanie dużej liczby rekordów.
+
+![Reservations](tutaj_zrzut_ekranu)
+
+Opis zdjęcia: Lista rezerwacji wraz z filtrami.
+
+### Proces rezerwacji sali
+
+Aby utworzyć rezerwację należy:
+
+1. Przejść do zakładki **Reserve Room**.
+2. Wybrać datę.
+3. Określić godzinę rozpoczęcia i zakończenia.
+4. Podać wymaganą pojemność sali.
+5. Wybrać jedną z dostępnych sal.
+6. Zatwierdzić formularz.
+
+System automatycznie sprawdza kolizje z:
+
+- istniejącymi rezerwacjami,
+- harmonogramem zajęć.
+
+![Reserve Room](tutaj_zrzut_ekranu)
+
+Opis zdjęcia: Formularz wyszukiwania dostępnych sal.
+
+### Przegląd własnych rezerwacji
+
+Zakładka **My Reservations** umożliwia:
+
+- przegląd wszystkich własnych rezerwacji,
+- wyszukiwanie po numerze sali,
+- filtrowanie po statusie.
+
+Dla odrzuconych rezerwacji wyświetlany jest również powód odrzucenia.
+
+![My Reservations](tutaj_zrzut_ekranu)
+
+Opis zdjęcia: Lista rezerwacji użytkownika.
+
+### Harmonogram zajęć
+
+Zakładka **Schedule** prezentuje tygodniowy plan zajęć użytkownika.
+
+Każdy blok zajęć zawiera:
+
+- nazwę przedmiotu,
+- numer sali,
+- godzinę rozpoczęcia,
+- godzinę zakończenia.
+
+![Teacher Schedule](tutaj_zrzut_ekranu)
+
+Opis zdjęcia: Tygodniowy harmonogram zajęć.
+
+### Zarządzanie profilem
+
+Każdy użytkownik może:
+
+- zmienić swoje dane,
+- zmienić hasło,
+- usunąć konto.
+
+![Profile](tutaj_zrzut_ekranu)
+
+Opis zdjęcia: Ekran zarządzania profilem użytkownika.
+
+### Obsługiwane przypadki brzegowe
+
+System zabezpiecza się przed nieprawidłowymi danymi wejściowymi.
+
+Obsługiwane są między innymi:
+
+- próba utworzenia rezerwacji w przeszłości,
+- próba utworzenia rezerwacji krótszej niż 15 minut,
+- próba utworzenia rezerwacji nakładającej się na istniejącą rezerwację,
+- próba utworzenia rezerwacji kolidującej z harmonogramem zajęć,
+- próba pozostawienia pustych pól formularzy,
+- próba ustawienia godziny zakończenia wcześniejszej niż godzina rozpoczęcia.
+
+### Przechowywane dane
+
+System przechowuje informacje dotyczące:
+
+- użytkowników,
+- sal dydaktycznych,
+- harmonogramów zajęć,
+- rezerwacji sal,
+- statusów rezerwacji,
+- powodów odrzucenia rezerwacji.
+
 ## Plany rozbudowy
 
 Pierwsza wersja systemu skupia się na podstawowych funkcjonalnościach związanych z zarządzaniem salami, harmonogramami zajęć oraz procesem rezerwacji. Podczas realizacji projektu udało się zaimplementować wszystkie kluczowe funkcje wymagane do prawidłowego działania systemu, jednak istnieje wiele możliwości dalszego rozwoju aplikacji.
