@@ -266,6 +266,7 @@ Administrator posiada dostęp do panelu administracyjnego umożliwiającego:
 - filtrowanie i wyszukiwanie danych.
 
 ![Panel administratora](images/Admin_dashboard.png)
+
 *Rysunek 1. Panel administratora zawierający dostępne moduły systemu.*
 
 #### Nauczyciel
@@ -280,9 +281,9 @@ Użytkownik może:
 - przeglądać harmonogram zajęć,
 - zarządzać własnym profilem.
 
-![Panel nauczyciela](tutaj_zrzut_ekranu)
+![Panel nauczyciela](images/Teacher_dashboard.png)
 
-Opis zdjęcia: Panel użytkownika z dostępnymi funkcjami dla prowadzącego.
+*Rysunek 2. Panel użytkownika z dostępnymi funkcjami dla prowadzącego.*
 
 ### Zarządzanie użytkownikami
 
@@ -291,11 +292,11 @@ Zakładka **Users** umożliwia administratorowi:
 - dodawanie nowych użytkowników,
 - edycję danych użytkowników,
 - usuwanie kont użytkowników,
-- wyszukiwanie użytkowników po imieniu lub adresie e-mail.
+- wyszukiwanie użytkowników po imieniu, nazwisku lub adresie e-mail.
 
-![Users](tutaj_zrzut_ekranu)
+![Users](images/Users_management.png)
 
-Opis zdjęcia: Lista użytkowników wraz z możliwością wyszukiwania.
+*Rysunek 3. Lista użytkowników wraz z możliwością wyszukiwania.*
 
 ### Zarządzanie salami
 
@@ -308,9 +309,9 @@ Zakładka **Rooms** umożliwia:
 - filtrowanie według typu sali,
 - filtrowanie według minimalnej pojemności.
 
-![Rooms](tutaj_zrzut_ekranu)
+![Rooms](images/Room_management.png)
 
-Opis zdjęcia: Lista sal wraz z mechanizmami wyszukiwania i filtrowania.
+*Rysunek 4. Lista sal wraz z mechanizmami wyszukiwania i filtrowania.*
 
 ### Zarządzanie harmonogramami
 
@@ -324,9 +325,9 @@ Dla każdego wpisu określane są:
 - godzina rozpoczęcia,
 - godzina zakończenia.
 
-![Schedule](tutaj_zrzut_ekranu)
+![Schedule](images/Schedule_management.png)
 
-Opis zdjęcia: Okno dodawania oraz edycji zajęć w harmonogramie.
+*Rysunek 5. Okno dodawania oraz edycji zajęć w harmonogramie.*
 
 ### Zarządzanie rezerwacjami
 
@@ -337,13 +338,13 @@ Dostępne funkcje:
 - wyszukiwanie po nazwisku prowadzącego lub numerze sali,
 - filtrowanie po statusie rezerwacji,
 - filtrowanie po zakresie dat,
-- akceptowanie i odrzucanie rezerwacji.
+- odrzucanie rezerwacji.
 
 System wykorzystuje stronicowanie danych, dzięki czemu możliwe jest wydajne wyświetlanie dużej liczby rekordów.
 
-![Reservations](tutaj_zrzut_ekranu)
+![Reservations](images/Reservations_management.png)
 
-Opis zdjęcia: Lista rezerwacji wraz z filtrami.
+*Rysunek 6. Lista rezerwacji wraz z filtrami.*
 
 ### Proces rezerwacji sali
 
@@ -361,9 +362,9 @@ System automatycznie sprawdza kolizje z:
 - istniejącymi rezerwacjami,
 - harmonogramem zajęć.
 
-![Reserve Room](tutaj_zrzut_ekranu)
+![Reserve Room](images/Reserve_room.png)
 
-Opis zdjęcia: Formularz wyszukiwania dostępnych sal.
+*Rysunek 7. Formularz wyszukiwania dostępnych sal.*
 
 ### Przegląd własnych rezerwacji
 
@@ -375,9 +376,9 @@ Zakładka **My Reservations** umożliwia:
 
 Dla odrzuconych rezerwacji wyświetlany jest również powód odrzucenia.
 
-![My Reservations](tutaj_zrzut_ekranu)
+![My Reservations](images/My_reservations.png)
 
-Opis zdjęcia: Lista rezerwacji użytkownika.
+*Rysunek 8. Lista rezerwacji użytkownika.*
 
 ### Harmonogram zajęć
 
@@ -390,21 +391,20 @@ Każdy blok zajęć zawiera:
 - godzinę rozpoczęcia,
 - godzinę zakończenia.
 
-![Teacher Schedule](tutaj_zrzut_ekranu)
+![Teacher Schedule](images/Teacher_schedule.png)
 
-Opis zdjęcia: Tygodniowy harmonogram zajęć.
+*Rysunek 9. Tygodniowy harmonogram zajęć.*
 
 ### Zarządzanie profilem
 
 Każdy użytkownik może:
 
-- zmienić swoje dane,
-- zmienić hasło,
-- usunąć konto.
+- odczytać swoje dane,
+- zmienić hasło.
 
-![Profile](tutaj_zrzut_ekranu)
+![Profile](images/Profil_page.png)
 
-Opis zdjęcia: Ekran zarządzania profilem użytkownika.
+*Rysunek 10. Ekran zarządzania profilem użytkownika.*
 
 ### Obsługiwane przypadki brzegowe
 
@@ -413,11 +413,14 @@ System zabezpiecza się przed nieprawidłowymi danymi wejściowymi.
 Obsługiwane są między innymi:
 
 - próba utworzenia rezerwacji w przeszłości,
-- próba utworzenia rezerwacji krótszej niż 15 minut,
 - próba utworzenia rezerwacji nakładającej się na istniejącą rezerwację,
 - próba utworzenia rezerwacji kolidującej z harmonogramem zajęć,
 - próba pozostawienia pustych pól formularzy,
 - próba ustawienia godziny zakończenia wcześniejszej niż godzina rozpoczęcia.
+
+![Przykładowy wypadek brzegowy](images/Past_reservation_conflict.png)
+
+*Rysunek 11. Próba reserwacji sali w przeszłości.*
 
 ### Przechowywane dane
 
